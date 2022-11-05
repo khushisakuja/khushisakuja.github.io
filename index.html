@@ -3,588 +3,378 @@
 
 <head>
     <meta charset="utf-8">
-    
-    <!--====== Title ======-->
-    <title>Photography HTML5 Website Template</title>
-    
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
-        
-    <!--====== Magnific Popup CSS ======-->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        
-    <!--====== Slick CSS ======-->
-    <link rel="stylesheet" href="assets/css/animate.css">
-        
-    <!--====== Slick CSS ======-->
-    <link rel="stylesheet" href="assets/css/slick.css">
-        
-    <!--====== Line Icons CSS ======-->
-    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
-        
-    <!--====== Bootstrap CSS ======-->
-    <link rel="stylesheet" href="assets/css/bootstrap.4.5.2.min.css">
-    
-    <!--====== Default CSS ======-->
-    <link rel="stylesheet" href="assets/css/default.css">
-    
-    <!--====== Style CSS ======-->
-    <link rel="stylesheet" href="assets/css/style.css">
-    
+    <!--====== Title ======-->
+    <title>Working on it</title>
+    <style>
+        .creatures {
+            width: 100%;
+            height: 100%;
+            background-color: #3567aa;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .human {
+            width: 100%;
+            height: 100%;
+            float: left;
+            background-color: #3567aa;
+            overflow: hidden;
+        }
+
+        .hat {
+            margin: 10% auto -18px;
+            width: 90px;
+            height: 60px;
+            background-color: rgb(31, 33, 43);
+            border-radius: 3px 2px 0 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hat:before {
+            content: "";
+            width: 100%;
+            height: 6px;
+            border-radius: 50%;
+            background-color: rgb(31, 33, 43);
+            position: absolute;
+            top: -3px
+        }
+
+        .hat:after {
+            content: "";
+            width: 150%;
+            height: 5px;
+            background-color: rgb(31, 33, 43);
+            position: absolute;
+            bottom: -5px;
+            left: -25%;
+        }
+
+        .head {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(246, 208, 166);
+            border-radius: 50%;
+            margin: 0 auto;
+            z-index: 2;
+            position: relative;
+        }
+
+        .head:after {
+            content: "";
+            position: absolute;
+            top: 90px;
+            left: 50%;
+            margin-left: -15px;
+            width: 30px;
+            height: 40px;
+            background-color: rgb(246, 208, 166);
+        }
+
+        .eyes {
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            position: absolute;
+            top: 30px;
+            border-radius: 50%;
+        }
+
+        .blink {
+            width: 27px;
+            height: 27px;
+            position: absolute;
+            top: -25px;
+            left: -1px;
+            z-index: 2;
+            border-radius: 0 0 10px 10px;
+            background-color: rgb(246, 208, 166);
+            animation: blinks 5s ease-in-out 2s infinite;
+        }
+
+        @keyframes blinks {
+            0% {
+                top: -25px;
+            }
+
+            10% {
+                top: 0px;
+            }
+
+            20% {
+                top: -25px;
+            }
+        }
+
+        .eyes.left {
+            left: 20px;
+        }
+
+        .eyes.right {
+            right: 20px;
+        }
+
+        .eyes:before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 19px;
+            top: 20%;
+            left: 20%;
+            background-color: black;
+            border-radius: 50%;
+        }
+
+        .eyes:after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            top: 24%;
+            left: 50%;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .left.eyes:after {
+            left: 19%
+        }
+
+        .right.eyes:after {
+            left: 58%
+        }
+
+        .mouth {
+            position: absolute;
+            left: 50%;
+            bottom: 10%;
+            margin-left: -20px;
+            background-color: black;
+            width: 40px;
+            height: 20px;
+            border-radius: 10px 10px 70px 70px;
+            overflow: hidden;
+        }
+
+        .mouth:before {
+            content: "";
+            height: 4px;
+            width: 20px;
+            background-color: white;
+            position: absolute;
+            top: 0;
+            left: 10px;
+            border-radius: 0px 0px 50px 50px;
+        }
+
+        .mouth:after {
+            content: "";
+            height: 6px;
+            width: 20px;
+            background-color: red;
+            position: absolute;
+            bottom: -2px;
+            left: 10px;
+            border-radius: 50px 50px 50px 50px;
+        }
+
+        .human .body {
+            height: 170px;
+            width: 100px;
+            background-color: rgb(31, 33, 43);
+            margin: 30px auto 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .human .bow {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            margin-left: -10px;
+            z-index: 3;
+            border-radius: 50%;
+        }
+
+        .human .bow:before {
+            content: "";
+            position: absolute;
+            right: 0%;
+            top: 0px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+
+            border-left: 30px solid red;
+        }
+
+        .human .bow:after {
+            content: "";
+            position: absolute;
+            left: 0%;
+            top: 0px;
+            width: 0;
+            height: 0;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+
+            border-right: 30px solid red;
+        }
+
+        .body .top {
+            position: absolute;
+            height: 80px;
+            width: 120%;
+            top: -20px;
+            left: -10%;
+            background-color: rgb(31, 33, 43);
+            border-radius: 50%;
+        }
+
+        .body .side {
+            position: absolute;
+            top: 0px;
+        }
+
+        .body .left {
+            height: 150px;
+            width: 50%;
+            background-color: rgb(31, 33, 43);
+            left: -21px;
+            border-radius: 50%;
+        }
+
+        .body .right {
+            height: 150px;
+            width: 50%;
+            background-color: rgb(31, 33, 43);
+            border-radius: 50%;
+            right: -21px;
+        }
+
+        .human .body .shirt {
+            height: 140px;
+            margin: 0 auto;
+            width: 30%;
+            background-color: white;
+            position: absolute;
+            left: 50%;
+            top: -20px;
+            margin-left: -15%;
+        }
+
+        .shirt:after {
+            content: "";
+            width: 100%;
+            height: 20px;
+            background-color: grey;
+            display: block;
+        }
+
+        .buttons {
+            width: 10px;
+            height: 75%;
+            margin: 30px auto 0;
+
+        }
+
+        .button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: black;
+            margin-bottom: 35px
+        }
+
+
+        .legs {
+            width: 100px;
+            height: 80px;
+            margin: 0 auto -10px;
+        }
+
+        .leg {
+            width: 45%;
+            height: 100%;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            background-color: rgb(31, 33, 43);
+        }
+
+        .leg:after {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            bottom: -20px;
+            width: 100%;
+            height: 30px;
+            background-color: #CB8B4D;
+            border-radius: 50px 50px 5px 5px;
+        }
+
+        .leg.right {
+            float: right;
+        }
+
+        .ground {
+            width: 100%;
+            height: 100%;
+            display: block;
+            float: left;
+            background-color: #7B6352;
+            margin: 0;
+        }
+
+    </style>
+
 </head>
 
 <body>
-    <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-    
-    
-
-    <!--====== PRELOADER PART START ======-->
-
-    <div class="preloader">
-        <div class="loader">
-            <div class="ytp-spinner">
-                <div class="ytp-spinner-container">
-                    <div class="ytp-spinner-rotator">
-                        <div class="ytp-spinner-left">
-                            <div class="ytp-spinner-circle"></div>
-                        </div>
-                        <div class="ytp-spinner-right">
-                            <div class="ytp-spinner-circle"></div>
-                        </div>
+    <div class="creatures">
+        <div class="human">
+            <div class="hat"></div>
+            <div class="head">
+                <div class="eyes left">
+                    <div class="blink"></div>
+                </div>
+                <div class="eyes right">
+                    <div class="blink"></div>
+                </div>
+                <div class="mouth"></div>
+            </div>
+            <div class="body">
+                <div class="top"></div>
+                <div class="bow"></div>
+                <div class="left side"></div>
+                <div class="right side"></div>
+                <div class="shirt">
+                    <div class="buttons">
+                        <div class="button"></div>
+                        <div class="button"></div>
+                        <div class="button"></div>
                     </div>
                 </div>
             </div>
+            <div class="legs">
+                <div class="leg left"></div>
+                <div class="leg right"></div>
+            </div>
+            <div class="feet"></div>
+            <div class="ground"></div>
         </div>
     </div>
 
-    <!--====== PRELOADER PART ENDS ======-->
-
-    <!--====== HEADER PART START ======-->
-
-    <section class="header_area">
-        <div class="header_navbar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" href="index.html">
-                                <img src="assets/images/logo.svg" alt="Logo">
-                            </a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                            </button>
-
-                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                                <ul id="nav" class="navbar-nav ml-auto">
-                                    <li class="nav-item active">
-                                        <a href="index.html">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="services.html">Services</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="about.html">About</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="gallery.html">Gallery</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="team.html">Testimonial</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="contact.html">Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="home" class="header_hero slider-active">
-            <div class="single_slider bg_cover d-flex align-items-center" style="background-image: url(assets/images/slider/1.jpg)">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-10 col-sm-11">
-                            <div class="slider_content">
-                                <h3 class="title" data-animation="fadeInUp" data-delay="0.2s">Mind Blowing Photograpy Web Template</h3>
-                                <p data-animation="fadeInUp" data-delay="0.6s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod  invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                                <a href="javscript:void(0)" class="main-btn main-btn-2" data-animation="fadeInUp" data-delay="0.9s">Download Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single_slider bg_cover d-flex align-items-center" style="background-image: url(assets/images/slider/2.jpg)">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-10 col-sm-11">
-                            <div class="slider_content">
-                                <h3 class="title" data-animation="fadeInUp" data-delay="0.2s">Showcase Your Portfolio and Works</h3>
-                                <p data-animation="fadeInUp" data-delay="0.6s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod  invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                                <a href="javscript:void(0)" class="main-btn main-btn-2" data-animation="fadeInUp" data-delay="0.9s">View Portfolio</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single_slider bg_cover d-flex align-items-center" style="background-image: url(assets/images/slider/3.jpg)">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-10 col-sm-11">
-                            <div class="slider_content">
-                                <h3 class="title" data-animation="fadeInUp" data-delay="0.2s">High-quality and Super Simple Design</h3>
-                                <p data-animation="fadeInUp" data-delay="0.6s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod  invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                                <a href="javscript:void(0)" class="main-btn main-btn-2" data-animation="fadeInUp" data-delay="0.9s">Get It Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-    </section>
-
-    <!--====== HEADER PART ENDS ======-->
-    
-    <!--====== SERVICES PART START ======-->
-
-    <section class="services_area pt-110">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center pb-25">
-                        <h4 class="title">Our Services</h4>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt labore et dolor.</p>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="single_services text-center mt-30 wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                        <img src="assets/images/services-1.jpg" alt="services">
-                        <h4 class="title">Photography</h4>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single_services text-center mt-30 wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.6s">
-                        <img src="assets/images/services-2.jpg" alt="services">
-                        <h4 class="title">Fashion Photography</h4>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single_services text-center mt-30 wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.9s">
-                        <img src="assets/images/services-3.jpg" alt="services">
-                        <h4 class="title">Weeding Videography</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--====== SERVICES PART ENDS ======-->
-    
-    <!--====== ABOUT PART START ======-->
-
-    <section class="about_area pt-70">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about_image mt-50 wow fadeInRightBig" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                        <img src="assets/images/about.jpg" alt="about">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about_content mt-40 wow fadeInLeftBig" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                        <div class="section_title">
-                            <h4 class="title">About Us Our Studio</h4>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magnaliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
-                        </div> <!-- section title -->
-                        
-                        <div class="about_progress">
-                            <h4 class="progress_title">Our Service Skills</h4>
-                            <div class="about_skills pt-15">
-                                <div class="skill_item mt-20">
-                                    <div class="skill_header">
-                                        <h6 class="skill_title">Photography</h6>
-                                        <div class="skill_percentage">
-                                            <p><span class="counter">88</span>%</p>
-                                        </div>
-                                    </div>
-                                    <div class="skill_bar">
-                                        <div class="bar_inner">
-                                            <div class="bar progress_line" data-width="88"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill_item mt-20">
-                                    <div class="skill_header">
-                                        <h6 class="skill_title">Fashion Photography</h6>
-                                        <div class="skill_percentage">
-                                            <p><span class="counter">75</span>%</p>
-                                        </div>
-                                    </div>
-                                    <div class="skill_bar">
-                                        <div class="bar_inner">
-                                            <div class="bar progress_line" data-width="75"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill_item mt-20">
-                                    <div class="skill_header">
-                                        <h6 class="skill_title">Wedding Videography</h6>
-                                        <div class="skill_percentage">
-                                            <p><span class="counter">80</span>%</p>
-                                        </div>
-                                    </div>
-                                    <div class="skill_bar">
-                                        <div class="bar_inner">
-                                            <div class="bar progress_line" data-width="80"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill_item mt-20">
-                                    <div class="skill_header">
-                                        <h6 class="skill_title">Video Editing</h6>
-                                        <div class="skill_percentage">
-                                            <p><span class="counter">65</span>%</p>
-                                        </div>
-                                    </div>
-                                    <div class="skill_bar">
-                                        <div class="bar_inner">
-                                            <div class="bar progress_line" data-width="65"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="about_social">
-                            <ul class="social">
-                                <li><a href="javscript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javscript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javscript:void(0)"><i class="lni lni-instagram-original"></i></a></li>
-                                <li><a href="javscript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="about_counter pt-20">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single_counter mt-30 wow fadeInUpBig" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                            <i class="lni lni-users"></i>
-                            <span id="secondo" class="count countup" cup-end="3540" cup-append="">3540</span>
-                            <p>Happy Client</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single_counter mt-30 wow fadeInUpBig" data-wow-duration="1.3s" data-wow-delay="0.4s">
-                            <i class="lni lni-camera"></i>
-                            <span id="secondo" class="count countup" cup-end="750" cup-append="">750</span>
-                            <p>Photo Session</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single_counter mt-30 wow fadeInUpBig" data-wow-duration="1.3s" data-wow-delay="0.6s">
-                            <i class="lni lni-video"></i>
-                            <span id="secondo" class="count countup" cup-end="540" cup-append="">540</span>
-                            <p>Weeding Video</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single_counter mt-30 wow fadeInUpBig" data-wow-duration="1.3s" data-wow-delay="0.8s">
-                            <i class="lni lni-user"></i>
-                            <span id="secondo" class="count countup" cup-end="54" cup-append="">54</span>
-                            <p>Team Member</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--====== ABOUT PART ENDS ======-->
-    
-    <!--====== GALLERY PART START ======-->
-
-    <section class="gallery_area pt-110 pb-120">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center pb-25">
-                        <h4 class="title">Photo Gallery</h4>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt labore et dolor.</p>
-                    </div> <!-- section title -->
-                </div>
-            </div> 
-        </div> 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-1.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-2.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-3.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-4.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-5.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-6.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-7.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-8.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--====== GALLERY PART ENDS ======-->
-    
-    <!--====== VIDEO PART START ======-->
-
-    <section class="pt-110">
-        <div class="container text-center">
-        <h1>You are using free lite version of the template</h1>
-        <p>Please purchase full version of the template get all pages, features and permission to remove footer credits</p></br>
-        <a href="https://rebrand.ly/photography-gg" class="main-btn">Purchase Now</a>
-        </div>
-    </section>
-
-
-    <!--====== CLIENT PART ENDS ======-->
-    
-    <!--====== INSTAGRAM PART START ======-->
-
-    <section class="instagram_area pt-110">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center pb-25">
-                        <h4 class="title">Instagram Post</h4>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt labore et dolor.</p>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3 col-6">
-                    <div class="single_instagram mt-30 wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                        <a href="javascript:void(0)">
-                            <img src="assets/images/instagram-1.jpg" alt="instagram">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="single_instagram mt-30 wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.4s">
-                        <a href="javascript:void(0)">
-                            <img src="assets/images/instagram-2.jpg" alt="instagram">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="single_instagram mt-30 wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.6s">
-                        <a href="javascript:void(0)">
-                            <img src="assets/images/instagram-3.jpg" alt="instagram">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="single_instagram mt-30 wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.8s">
-                        <a href="javascript:void(0)">
-                            <img src="assets/images/instagram-4.jpg" alt="instagram">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--====== INSTAGRAM PART ENDS ======-->
-    
-    <!--====== CONTACT PART START ======-->
-
-    <section class="contact_area pt-110 pb-120">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center pb-25">
-                        <h4 class="title">Get in Touch</h4>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt labore et dolor.</p>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            
-            <form id="contact-form" action="assets/contact.php" method="POST" class="wow fadeInUpBig" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="single_form">
-                            <input type="text" name="name" placeholder="Name">
-                        </div>
-                        <div class="single_form">
-                            <input type="email" name="email" placeholder="Email">
-                        </div>
-                        <div class="single_form">
-                            <input type="text" name="subject" placeholder="Subject">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="single_form">
-                            <textarea name="massage" placeholder="Massage"></textarea>
-                        </div>
-                    </div>
-                    <p class="form-message"></p>
-                    <div class="col-lg-12">
-                        <div class="single_form">
-                            <button type="submit" class="main-btn">Sand Massage</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!--====== CONTACT PART ENDS ======-->
-    
-    <!--====== MAP PART START ======-->
-
-    <section class="map_area">
-        <div class="gmap_canvas">                            
-            <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-        </div>
-    </section>
-
-    <!--====== MAP PART ENDS ======-->
-    
-    <!--====== FOOTER PART START ======-->
-
-    <section class="footer_area ">
-        <div class="container">
-            <div class="footer_widget pt-120 pb-120">
-                <div class="footer_content text-center">
-                    <a href="javscript:void(0)" class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                        <img src="assets/images/logo-2.svg" alt="logo">
-                    </a>
-                    <span class="mail wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">photostudio@gmail.com</span>
-                    <ul class="footer_menu wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
-                        <li><a href="javscript:void(0)">Home</a></li>
-                        <li><a href="javscript:void(0)">Service</a></li>
-                        <li><a href="javscript:void(0)">About</a></li>
-                        <li><a href="javscript:void(0)">Gallery</a></li>
-                        <li><a href="javscript:void(0)">Testimonial</a></li>
-                        <li><a href="javscript:void(0)">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer_social_copyright text-center d-sm-flex align-items-center justify-content-between">
-                <div class="footer_social">
-                    <ul class="social">
-                        <li><a href="javscript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                        <li><a href="javscript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                        <li><a href="javscript:void(0)"><i class="lni lni-instagram-original"></i></a></li>
-                        <li><a href="javscript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
-                    </ul>
-                </div>
-                <div class="footer_copyright">
-                    <p>Designed and Developed by <a href="https://graygrids.com" rel="nofollow">GrayGrids</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--====== FOOTER PART ENDS ======-->
-    
-    <!--====== BACK TOP TOP PART START ======-->
-
-    <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
-
-    <!--====== BACK TOP TOP PART ENDS ======-->
-    
-    <!--====== PART START ======-->
-
-<!--
-    <section class="">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-">
-                    
-                </div>
-            </div>
-        </div>
-    </section>
--->
-
-    <!--====== PART ENDS ======-->
-    
-    
-
-
-
-
-    <!--====== Jquery js ======-->
-    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
-    
-    <!--====== Bootstrap js ======-->
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.4.5.2.min.js"></script>
-    
-    <!--====== Slick js ======-->
-    <script src="assets/js/slick.min.js"></script>
-    
-    <!--====== Ajax Contact js ======-->
-    <script src="assets/js/ajax-contact.js"></script>
-    
-    <!--====== Magnific Popup js ======-->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    
-    <!--====== Appear js ======-->
-    <script src="assets/js/jquery.appear.min.js"></script>
-    
-    <!--====== Counter Up js ======-->
-    <script src="assets/js/count-up.min.js"></script>
-    
-    <!--====== wow js ======-->
-    <script src="assets/js/wow.min.js"></script>
-    
-    <!--====== Main js ======-->
-    <script src="assets/js/main.js"></script>
-    
 </body>
 
 </html>
